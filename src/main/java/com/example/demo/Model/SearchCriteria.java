@@ -4,7 +4,7 @@ import javax.validation.constraints.NotEmpty;
 
 public class SearchCriteria {
 
-    //@NotEmpty
+    @NotEmpty(message = "username can't be empty")
     private String username;
 
     public SearchCriteria() {

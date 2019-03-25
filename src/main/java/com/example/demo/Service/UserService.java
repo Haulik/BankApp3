@@ -21,6 +21,17 @@ public class UserService {
         return null;
     }
 
+    public List<GoldenCow> findCows(String username){
+        List<GoldenCow> searchResult = new ArrayList<>();
+        for (GoldenCow cow : cows) {
+            if(cow.getName().equals(username)){
+                searchResult.add(cow);
+            }
+        }
+        return searchResult;
+    }
+
+
     @PostConstruct //Java Spring vil kalde denne metode EFTER objektet er blevet instantieret
     private void initDataForTest(){
         cows = new ArrayList<>();
@@ -28,10 +39,12 @@ public class UserService {
         GoldenCow goldenCow2 = new GoldenCow("Boris", 2, 27);
         GoldenCow goldenCow3 = new GoldenCow("Anna", 3, 32);
         GoldenCow goldenCow4 = new GoldenCow("Thomas", 4, 25);
+        GoldenCow goldenCow5 = new GoldenCow("Thomas", 5, 65);
         cows.add(goldenCow1);
         cows.add(goldenCow2);
         cows.add(goldenCow3);
         cows.add(goldenCow4);
+        cows.add(goldenCow5);
 
     }
 }

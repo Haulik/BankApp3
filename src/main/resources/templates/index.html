@@ -34,12 +34,16 @@
                 dataType:'json',
                 data:JSON.stringify(search),
                 success: function (data) {
+                    console.log(data);
                    // alert("OK " + data);
-                    $("#responsetext").html(data.message);
+                    $.each(data.result,function (index, value) {
+                        $("#responsetext").append("<form><input type='text' value='"+value.name+"'>"+"<input type='submit'></form>")
+                    })
                 },
                 error: function (data) {
+                   console.log(data);
                   alert("Error " + data)
-                    $("#responsetext").html("Fejl i request " + data.message);
+                    $("#responsetext").html("Fejl i request " + " Code:" + data.status + "" + data.responseJSON.message);
                 }
             });
         }
@@ -56,6 +60,9 @@
 </form>
 <div id="responsetext">
     Her kommer svar..
+</div>
+<div id="responsetext2">
+    Her kommer svar2
 </div>
 
 <h2>Login</h2>

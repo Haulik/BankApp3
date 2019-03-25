@@ -30,7 +30,7 @@ public class GraphResponseBody {
         return result;
     }
 
-    public void setResult(List<Vertex> result) {
+    public void setVertices(List<Vertex> result) {
         this.result = result;
     }
 }

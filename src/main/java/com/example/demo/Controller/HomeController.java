@@ -34,11 +34,7 @@ public class HomeController {
         return "redirect:/index.html";
     }
 
-    @GetMapping("/dijkstra")
-    public String dijkstra(){
 
-        return "redirect:/dijkstra";
-    }
 
     @PostMapping("/addUser")
     public String addUser(GoldenCow cow){

@@ -4,12 +4,26 @@ package com.example.demo.graph;
 import java.util.List;
 
 public class GraphResponseBody {
-// This class has no annotations. But since it's fields are String based, they can be
-    // accessed on the client side, using javascript object notation (JSON)
     private String msg;
-    private List<Vertex> result;
+    private List<Vertex> vertices;
     private List<Edge> edges;
     private List<Edge> shortestPath;
+
+    public List<Vertex> getResult() {
+        return vertices;
+    }
+
+    public void setResult(List<Vertex> result) {
+        this.vertices = result;
+    }
+
+    public List<Edge> getShortestPath() {
+        return shortestPath;
+    }
+
+    public void setShortestPath(List<Edge> shortestPath) {
+        this.shortestPath = shortestPath;
+    }
 
     public List<Edge> getEdges() {
         return edges;
@@ -28,10 +42,10 @@ public class GraphResponseBody {
     }
 
     public List<Vertex> getVertices() {
-        return result;
+        return vertices;
     }
 
     public void setVertices(List<Vertex> result) {
-        this.result = result;
+        this.vertices = result;
     }
 }

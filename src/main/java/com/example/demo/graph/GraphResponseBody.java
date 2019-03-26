@@ -9,6 +9,7 @@ public class GraphResponseBody {
     private String msg;
     private List<Vertex> result;
     private List<Edge> edges;
+    private List<Edge> shortestPath;
 
     public List<Edge> getEdges() {
         return edges;
@@ -26,7 +27,7 @@ public class GraphResponseBody {
         this.msg = msg;
     }
 
-    public List<Vertex> getResult() {
+    public List<Vertex> getVertices() {
         return result;
     }
 
